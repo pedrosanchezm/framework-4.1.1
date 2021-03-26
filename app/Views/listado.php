@@ -34,7 +34,6 @@
 			</div>
 			<hr>
       <h2>Listado de personas</h2>
-			<?php printf($datos); ?>
       <div class="row">
       	<div class="col-sm-12">
 					<div class="table table-responsive">
@@ -50,7 +49,16 @@
 			          </tr>
 			        </thead>
 			        <tbody>
-
+								<?php foreach ($datos as $key): ?>
+									<tr>
+										<td><?php echo $key->Id?></td>
+										<td><?php echo $key->Nombre?></td>
+										<td><?php echo $key->Apellido?></td>
+										<td><?php echo $key->Correo?></td>
+										<td><a href="<?php echo base_url().'/obtenerId/$key->Id' ?>" class="btn btn-warning btn-sm">Editar</a></td>
+										<td><a href="<?php echo base_url().'/eliminar/$key->Id' ?>" class="btn btn-warning btn-sm">Eliminar</a></td>
+									</tr>
+								<?php endforeach; ?>
 			        </tbody>
 			      </table>
 		      </div>

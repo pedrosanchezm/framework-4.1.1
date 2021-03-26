@@ -6,7 +6,7 @@
 
   class CrudModel extends Model {
     public function listarNombres() {
-      $Nombres = this->db->query('SELECT * FROM t_usuarios');
+      $Nombres = $this->db->query("SELECT * FROM t_usuarios");
       return $Nombres->getResult();
     }
   }

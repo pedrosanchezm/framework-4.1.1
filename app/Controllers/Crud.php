@@ -9,7 +9,6 @@ class Crud extends BaseController
 	public function index()
 	{
 		$Crud = new CrudModel();
-		$Crud->instance();
 		$datos = $Crud->listarNombres();
 
 		$data = ["datos" => $datos];
