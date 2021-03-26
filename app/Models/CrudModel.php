@@ -9,4 +9,11 @@
       $Nombres = $this->db->query("SELECT * FROM t_usuarios");
       return $Nombres->getResult();
     }
+
+    public function insertar($datos) {
+      $Nombres = $this->db->table('t_usuarios');
+      $Nombres->insert($datos);
+
+      return $this->db->insertID();
+    }
   }

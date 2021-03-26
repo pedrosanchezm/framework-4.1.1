@@ -15,7 +15,7 @@
     	<h1>Crud Codeigniter 4</h1>
 			<div class="row">
 				<div class="col-sm-12">
-					<form class="" action="<?php echo base_url().'/crear' ?>" method="post">
+					<form class="" action="<?php echo base_url().'/crear' ?>" method="POST">
 						<div class="form-group">
 							<label for="nombre">Nombre:</label>
 							<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Escribe tu nombre">
@@ -28,7 +28,7 @@
 							<label for="correo">Correo:</label>
 							<input type="text" class="form-control" name="correo" id="correo" placeholder="Escribe tu correo">
 						</div>
-						<button type="button" class="btn btn-primary mt-2" id="guardar" name="guardar">Guardar</button>
+						<button class="btn btn-primary mt-2" id="guardar" name="guardar">Guardar</button>
 					</form>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 										<td><?php echo $key->Apellido?></td>
 										<td><?php echo $key->Correo?></td>
 										<td><a href="<?php echo base_url().'/obtenerId/$key->Id' ?>" class="btn btn-warning btn-sm">Editar</a></td>
-										<td><a href="<?php echo base_url().'/eliminar/$key->Id' ?>" class="btn btn-warning btn-sm">Eliminar</a></td>
+										<td><a href="<?php echo base_url().'/eliminar/$key->Id' ?>" class="btn btn-danger btn-sm">Eliminar</a></td>
 									</tr>
 								<?php endforeach; ?>
 			        </tbody>
@@ -71,6 +71,16 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+		<script type="text/javascript">
+			let mensaje = '<?php echo $mensaje ?>';
+
+			if (mensaje=='1') {
+				swal(':D','Agregado con exito!','success');
+			}else if(mensaje =='0'){
+				swal(':(','Fallo al agregar!','error');
+			}
+		</script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
