@@ -55,8 +55,8 @@
 										<td><?php echo $key->Nombre?></td>
 										<td><?php echo $key->Apellido?></td>
 										<td><?php echo $key->Correo?></td>
-										<td><a href="<?php echo base_url().'/obtenerId/$key->Id' ?>" class="btn btn-warning btn-sm">Editar</a></td>
-										<td><a href="<?php echo base_url().'/eliminar/$key->Id' ?>" class="btn btn-danger btn-sm">Eliminar</a></td>
+										<td><a href="<?php echo base_url().'/obtenerId/'.$key->Id ?>" class="btn btn-warning btn-sm">Editar</a></td>
+										<td><a href="<?php echo base_url().'/eliminar/'.$key->Id ?>" class="btn btn-danger btn-sm">Eliminar</a></td>
 									</tr>
 								<?php endforeach; ?>
 			        </tbody>
@@ -75,11 +75,20 @@
 		<script type="text/javascript">
 			let mensaje = '<?php echo $mensaje ?>';
 
-			if (mensaje=='1') {
-				swal(':D','Agregado con exito!','success');
-			}else if(mensaje =='0'){
-				swal(':(','Fallo al agregar!','error');
+			if (mensaje=='0') {
+				swal(':D','Fallo al agregar!','error');
+			}else if(mensaje =='1'){
+				swal(':(','Agregado con exito!','success');
+			} else if (mensaje=='2') {
+				swal(':D','Actualizado con exito!','success');
+			}else if(mensaje =='3'){
+				swal(':(','Fallo al actualizar!','error');
+			} else if (mensaje=='4') {
+				swal(':D','Eliminado con exito!','success');
+			}else if(mensaje =='5'){
+				swal(':(','Fallo al eliminar!','error');
 			}
+
 		</script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

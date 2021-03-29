@@ -1,3 +1,9 @@
+<?php
+  $Id = $datos[0]['Id'];
+  $Nombre = $datos[0]['Nombre'];
+  $Apellido = $datos[0]['Apellido'];
+  $Correo = $datos[0]['Correo'];
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,21 +21,21 @@
     	<h1>Crud Codeigniter 4</h1>
 			<div class="row">
 				<div class="col-sm-12">
-					<form class="" action="<?php echo base_url().'/crear' ?>" method="post">
-            <input type="hidden" name="Id" value="">
+					<form class="" action="<?php echo base_url().'/actualizar' ?>" method="POST">
+            <input type="text" name="Id" id="Id" value="<?php echo $Id; ?>" hidden="">
 						<div class="form-group">
 							<label for="nombre">Nombre:</label>
-							<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Escribe tu nombre">
+							<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Escribe tu nombre" value="<?php echo $Nombre; ?>">
 						</div>
 						<div class="form-group">
 							<label for="apellido">Apellido:</label>
-							<input type="text" class="form-control" name="apellido" id="apellido" placeholder="Escribe tu apellido">
+							<input type="text" class="form-control" name="apellido" id="apellido" placeholder="Escribe tu apellido" value="<?php echo $Apellido; ?>">
 						</div>
 						<div class="form-group">
 							<label for="correo">Correo:</label>
-							<input type="text" class="form-control" name="correo" id="correo" placeholder="Escribe tu correo">
+							<input type="text" class="form-control" name="correo" id="correo" placeholder="Escribe tu correo" value="<?php echo $Correo; ?>">
 						</div>
-						<button type="button" class="btn btn-primary mt-2" id="actualizar" name="actualizar">Actualizar</button>
+						<button class="btn btn-primary mt-2" id="actualizar" name="actualizar">Actualizar</button>
 					</form>
 				</div>
 			</div>
